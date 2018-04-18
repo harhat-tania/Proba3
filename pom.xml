@@ -12,11 +12,11 @@
 		<aspectj.version>1.7.4</aspectj.version>
 	</properties>
 	<dependencies>
-	<dependency>
-		<groupId>ru.yandex.qatools.allure</groupId>
-		<artifactId>allure-junit-adaptor</artifactId>
-		<version>${allure.version}</version>
-	</dependency>
+		<dependency>
+			<groupId>ru.yandex.qatools.allure</groupId>
+			<artifactId>allure-junit-adaptor</artifactId>
+			<version>${allure.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -43,6 +43,13 @@
 						<version>${aspectj.version}</version>
 					</dependency>
 				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<configuration>
+					<webAppSourceDirectory>${project.build.directory}/site/allure-maven-plugin</webAppSourceDirectory>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
